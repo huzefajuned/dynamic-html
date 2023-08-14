@@ -111,3 +111,73 @@ const ecommerceData = [
     parentDiv.appendChild(cardDiv);
   });
 })();
+
+// footer  *******
+
+const footer_elements = [
+  {
+    id: 11,
+    paraGraph: "Get connected with us on Social Media:",
+    image1:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/1200px-Logo_of_Twitter.svg.png",
+    image2:
+      "/Users/Gulab/Desktop/JS_2/dynamically_html/dynamic-html/Facebook_f_logo_(2021).svg.webp",
+  },
+];
+
+// function **
+(function () {
+  const footer_Div = document.getElementById("main_footer");
+  footer_elements.forEach((media_dat) => {
+    const links_Div = document.createElement("div");
+    links_Div.id = "footer";
+    links_Div.innerHTML = `
+    <div class = "social_media_links">
+      <p>${media_dat.paraGraph}</p>
+      <div class ="socialMedia_images">
+      <img href="${media_dat.image1}" alt="Twitter">
+      <img href="${media_dat.image2}" alt="Facebook">
+      </div>
+    </div>
+    `;
+
+    footer_Div.appendChild(links_Div);
+  });
+})();
+
+// ****** another array
+
+// const user_footer = ["item1", "item2", "item3", "item4", "item5"];
+
+// function loope_Me(user_footer) {
+//   for (let i = 0; i < user_footer.length; i++) {
+//     const footer_elemnt = document.getElementById("main_footer");
+//     const user_interface = document.createElement("div");
+//     user_interface.id = "user_div";
+//     user_interface.innerHTML = `
+//            <p>${user_footer[i]}</p>
+//         `;
+//     footer_elemnt.appendChild(user_interface);
+//   }
+// }
+// loope_Me(user_footer);s
+
+// let main_div = document.getElementById("main_footer");
+// let create_mainDiv = document.createElement("div");
+// create_mainDiv.id = "main_Div";
+
+const user_footer = ["item1", "item2", "item3", "item4", "item5"];
+
+function loope_Me(user_footer) {
+  const footer_elemnt = document.getElementById("main_footer");
+  const test_interface = document.createElement("div");
+  test_interface.id = "test_something";
+  for (let i = 0; i < user_footer.length; i++) {
+    const user_interface = document.createElement("p");
+    user_interface.id = "user_para";
+    user_interface.innerHTML = user_footer[i];
+    test_interface.appendChild(user_interface);
+  }
+  footer_elemnt.appendChild(test_interface);
+}
+loope_Me(user_footer);
