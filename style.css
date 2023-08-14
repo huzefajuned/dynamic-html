@@ -18,6 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 5%;
+  margin-top:6%;
 }
 
 #card {
@@ -69,4 +70,49 @@ body {
 .star {
   color: #f39c12;
   margin: 0 2px;
+}
+
+
+/* CSS FOR NAVBAR */
+
+.navBar{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  top: 0px;
+}
+
+.navBar>img{
+  width: 200px;
+  height: 150px;
+  margin: 5px;
+
+}
+
+.navBar>img:hover{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.inner-nav{
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
+.inner-nav>p{
+  padding: 20px;
+  margin: 5px;
+}
+
+.links{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  font-size: 20px;
+}
+.links:hover{
+  border-radius: 20px;
 }

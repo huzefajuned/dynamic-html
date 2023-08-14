@@ -1,3 +1,39 @@
+//Nav Bar
+
+const navData = [
+  {
+    home:"Home",
+    about:"About",
+    contact:"Contact",
+    blog:"Blogs",
+    location:"Location"
+  }
+]
+
+// Function for navdata
+function functionForNav() {
+  const Navdata = document.getElementById("navBar");
+  navData.forEach((ecom_nav) => {
+    const headerNav = document.createElement("div");
+    headerNav.id = "nav";
+    headerNav.innerHTML = `
+    <div class="inner-nav">
+    <p class="links">${ecom_nav.home}</p>
+    <p class="links">${ecom_nav.about}</p>
+    <p class="links">${ecom_nav.contact}</p>
+    <p class="links">${ecom_nav.blog}</p>
+    <p class="links">${ecom_nav.location}</p>
+    </div>`;
+
+    Navdata.appendChild(headerNav);
+
+  })
+}
+
+functionForNav();
+
+
+
 //dummy-data
 const ecommerceData = [
   {
