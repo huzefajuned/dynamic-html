@@ -1,39 +1,3 @@
-//Nav Bar
-
-const navData = [
-  {
-    home:"Home",
-    about:"About",
-    contact:"Contact",
-    blog:"Blogs",
-    location:"Location"
-  }
-]
-
-// Function for navdata
-function functionForNav() {
-  const Navdata = document.getElementById("navBar");
-  navData.forEach((ecom_nav) => {
-    const headerNav = document.createElement("div");
-    headerNav.id = "nav";
-    headerNav.innerHTML = `
-    <div class="inner-nav">
-    <p class="links">${ecom_nav.home}</p>
-    <p class="links">${ecom_nav.about}</p>
-    <p class="links">${ecom_nav.contact}</p>
-    <p class="links">${ecom_nav.blog}</p>
-    <p class="links">${ecom_nav.location}</p>
-    </div>`;
-
-    Navdata.appendChild(headerNav);
-
-  })
-}
-
-functionForNav();
-
-
-
 //dummy-data
 const ecommerceData = [
   {
@@ -128,9 +92,39 @@ const ecommerceData = [
   },
 ];
 
-// crete funtion --
+//dummy-fake data
+const navLinks = ["Home", "About", "Services", "Portfolio", "Contact"];
 
-(function () {
+// main function from here---
+document.addEventListener("DOMContentLoaded", function () {
+  const logo_Div = document.createElement("div");
+  logo_Div.className = "logo";
+  logo_Div.innerHTML = ` 
+      <img  id='logo_img' src ='./images/heliverse.png'/>
+  `;
+
+  const main_Div = document.getElementById("nav");
+  const inner_Div = document.createElement("ul");
+
+  for (let i = 0; i < navLinks.length; i++) {
+    inner_Div.innerHTML += `
+          <li>    
+            <a href="">${navLinks[i]}</a>
+          </li>
+    `;
+  }
+
+  main_Div.appendChild(logo_Div);
+  main_Div.appendChild(inner_Div);
+  const aTags = document.querySelectorAll("a");
+
+  for (let i = 0; i < aTags.length; i++) {
+    aTags[i].addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default behavior of the link
+      alert("Clicked: " + aTags[i].innerText);
+    });
+  }
+
   const parentDiv = document.getElementById("main");
   ecommerceData.forEach((ecom_data) => {
     const cardDiv = document.createElement("div");
@@ -146,4 +140,4 @@ const ecommerceData = [
 
     parentDiv.appendChild(cardDiv);
   });
-})();
+});
