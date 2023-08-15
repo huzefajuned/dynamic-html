@@ -109,14 +109,14 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < navLinks.length; i++) {
     inner_Div.innerHTML += `
           <li>    
-            <a href="">${navLinks[i]}</a>
+            <a href="#" id='single-link'>${navLinks[i]}</a>
           </li>
     `;
   }
 
   main_Div.appendChild(logo_Div);
   main_Div.appendChild(inner_Div);
-  const aTags = document.querySelectorAll("a");
+  const aTags = document.querySelectorAll("#single-link");
 
   for (let i = 0; i < aTags.length; i++) {
     aTags[i].addEventListener("click", function (event) {
