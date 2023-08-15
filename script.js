@@ -141,3 +141,42 @@ document.addEventListener("DOMContentLoaded", function () {
     parentDiv.appendChild(cardDiv);
   });
 });
+
+//  FOOTER  ******
+
+const socialMedia_links = [
+  { img: "images/facebook icon.webp", url: "https://www.facebook.com/" },
+  { img: "images/twitter icon.png", url: "https://www.twitter.com/" },
+  { img: "images/insta icon.png", url: "https://www.instagram.com/" },
+  { img: "images/youtube icon.png", url: "https://www.youtube.com/" },
+];
+
+const footer = document.getElementById("footer");
+
+const socialMediaContainer = document.createElement("div");
+socialMediaContainer.id = "social_links";
+
+socialMedia_links.forEach((link) => {
+  const iconLink = document.createElement("a");
+  iconLink.href = link.url;
+
+  const image = document.createElement("img");
+  image.className = "socialMedia_img";
+  image.src = link.img;
+
+  iconLink.appendChild(image);
+  socialMediaContainer.appendChild(iconLink);
+});
+
+footer.appendChild(socialMediaContainer);
+
+// FOR @COPY RIGHT FOOTER TEXT****
+
+const footerText_div = document.createElement("div");
+footerText_div.id = "footer_text";
+
+const footer_text = document.createElement("p");
+footer_text.innerHTML = "© 2023 Dynamic Footer Example";
+
+footerText_div.appendChild(footer_text);
+footer.appendChild(footerText_div);
